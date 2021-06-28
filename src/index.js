@@ -1,3 +1,4 @@
+import "./config" // Import environment variables and configure FCL
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
