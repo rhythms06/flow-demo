@@ -1,6 +1,6 @@
 // Our Flow Client Library (FCL) configuration.
 
-import {config} from "@onflfow/fcl"
+import {config} from "@onflow/fcl"
 
 config()
   .put("accessNode.api", process.env.REACT_APP_ACCESS_NODE) // Set Flow endpoint.
