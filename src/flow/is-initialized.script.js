@@ -6,7 +6,7 @@ export async function isInitialized(address) {
     if (address == null) {
         throw new Error("isInitialized(address) failed because address was null")
     }
-    // Reminders:
+    // Breakdown:
     // fcl.send takes a two-component array, a script and an argument array.
     // An argument takes the form fcl.arg(name, t.Type), where Type is defined in @onflow/types.
     // 0xProfile is defined in src/config.js as the address of the Profile smart contract.
