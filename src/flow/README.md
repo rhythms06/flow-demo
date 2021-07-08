@@ -40,6 +40,8 @@ correspond to an input field of the main function of `fcl.script`.
 Finally, `fcl.decode` applies the arguments specified in `fcl.args`
 to the `fcl.script` method `pub fun main`, the script's main function.
 
+*See `is-initialized.script.js` for an annotated, working example.*
+
 
 ## Transactions
 **Transactions** have the suffix `.tx.js` and are used to
@@ -82,3 +84,5 @@ for easy transacting.
 
 Finally, `fcl.decode` returns an ID that can used
 to check the status of a state modification.
+
+*See `init-account.tx.js` for an annotated, working example.*
