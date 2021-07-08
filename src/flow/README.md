@@ -44,8 +44,9 @@ to the `fcl.script` method `pub fun main`, the script's main function.
 ## Transactions
 **Transactions** have the suffix `.tx.js` and are used to
 permanently alter the state of the blockchain. Every transaction has a set
-*computation limit* and requires  a *payer*, *proposer*, and *authorizer*.
+*computation limit* and requires  a *payer*, *proposer*, and (usually) *authorizer(s)*.
 Often, the current user is asked to play all three roles.
+A transaction may also specify arguments, but is not required to do so.
 
 ```javascript
 import * as fcl from "@onflow/fcl" // Flow Client Library
@@ -59,10 +60,11 @@ export async function func(variable) {
                 // Define one or more blockchain-altering functions here
             }
             `,
-            fcl.payer(userID),
-            fcl.proposer(userID),
-            fcl.authorizations(userID),
-            fcl.limit(integer)
+            fcl.payer(userID), // Required
+            fcl.proposer(userID), // Required
+            fcl.authorizations(userID), // Optional
+            fcl.limit(integer), // Required
+            fcl.args([fcl.arg(variable, t.Type)]) // Optional
         ])
         .then(fcl.decode)
     
