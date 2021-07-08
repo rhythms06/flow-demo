@@ -9,7 +9,7 @@ In the project directory, you can run:
 - `yarn start` to run the app in the development mode at [http://localhost:3000](http://localhost:3000)
 - `yarn test` to launch the test runner in the interactive watch mode
 - `yarn build` to build the app for production to `/build/`
-- `yarn eject` (an **irreversible** operation) to copy all configs and transitive dependencies to your project so that you have full control over them
+- `yarn eject` to leave the automated create-react-app environment
 
 ## Useful Links
 
