@@ -1,11 +1,11 @@
 # Scripts and Transactions
 
-In Flow, **scripts** and **transactions** are JavaScript files used for
-querying and modifying the blockchain. The central piece of either kind of
-file is the method `fcl.send([]).then(fcl.decode)`, which transmits
-[Cadence-formatted](https://docs.onflow.org/cadence/) information
-to the blockchain via the access node specified in
-`/.env.local` and `src/config.js` and retrieves a response.
+In [Flow](https://onflow.org/), **scripts** and **transactions** are JavaScript files
+housed under `/src/flow/` by convention used to query and modify the blockchain.
+The central piece of either kind of file is the method `fcl.send([]).then(fcl.decode)`,
+which transmits [Cadence-formatted](https://docs.onflow.org/cadence/) information
+to the blockchain via the access node specified in `/.env.local` and `src/config.js`
+and retrieves a response.
 
 ## Scripts
 **Scripts** have the suffix `.script.js` and are used to
