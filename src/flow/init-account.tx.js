@@ -1,6 +1,8 @@
 import * as fcl from "@onflow/fcl"
 
 // Initialize an account.
+// More specifically, ask the current user to propose, authorize, and pay for the addition of
+// (a) a Profile smart contract to their storage and (b) a public reading capability to their new profile.
 export async function initAccount() {
     // Breakdown:
     // fcl.send specifies a transaction, a payer, a proposer, an authorization array, and a computation limit.
@@ -36,12 +38,12 @@ export async function initAccount() {
                     }
                 }
             `,
-            fcl.payer(fcl.authz),
-            fcl.proposer(fcl.authz),
-            fcl.authorizations([fcl.authz]),
-            fcl.limit(35)
+            fcl.payer(fcl.authz), // Make the current user pay for the transaction
+            fcl.proposer(fcl.authz), // Make the current user act as the proposer (aka nonce)
+            fcl.authorizations([fcl.authz]), // Make the current user authorize the transaction
+            fcl.limit(35) // Set the computation limit of the transaction
         ])
         .then(fcl.decode)
 
-    return fcl.tx(txId).onceSealed()
+    return fcl.tx(txId).onceSealed() // Track the transaction's status, and report back once it's complete (aka sealed)
 }
