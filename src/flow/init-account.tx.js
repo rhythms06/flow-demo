@@ -5,7 +5,7 @@ import * as fcl from "@onflow/fcl"
 // (a) a Profile smart contract to their storage and (b) a public reading capability to their new profile.
 export async function initAccount() {
     // Breakdown:
-    // fcl.send specifies a transaction, a payer, a proposer, an authorization array, and a computation limit.
+    // fcl.send specifies a transaction, a proposer, a payer, an authorization array, and a computation limit.
     // 0xProfile is defined in src/config.js as the address of the Profile smart contract.
     // fcl.authz is short for fcl.currentUser().authorization, the current user's transaction entity.
     // fcl.decode returns a transaction ID, which we store in txId for later use.
@@ -38,8 +38,8 @@ export async function initAccount() {
                     }
                 }
             `,
-            fcl.payer(fcl.authz), // Make the current user pay for the transaction
             fcl.proposer(fcl.authz), // Make the current user act as the proposer (aka nonce)
+            fcl.payer(fcl.authz), // Make the current user pay for the transaction
             fcl.authorizations([fcl.authz]), // Make the current user authorize the transaction
             fcl.limit(35) // Set the computation limit of the transaction
         ])
