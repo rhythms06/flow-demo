@@ -2,7 +2,7 @@
 
 A rudimentary [Flow](https://onflow.org/) dApp built to document core features of the Flow JS SDK.
 
-It was bootstrapped with [create-react-app](https://github.com/facebook/create-react-app).
+Bootstrapped with [create-react-app](https://github.com/facebook/create-react-app).
 
 ## Running the app
 
